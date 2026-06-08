@@ -1,0 +1,46 @@
+# Eye-tracked Chromatic Filtering Settings
+
+target_fps = 144
+force_rgb = False
+capture_format = "rgb"
+debug_gl_finish = True
+gl_finish_interval = 60
+overlay_size = 2560, 1440
+overlay_pos = 0, 0
+
+#Calculated from PSF_test_rosencrone.ipynb (Human LCA calculation)
+#Gets converted to int automatically, thus using floats
+radius_rgb = 1.283, 1.338, 6.135
+
+#Calculated as the second moment of the disk to preserve the same amount of blur as a disk blur
+sigma_rgb = 0.91, 0.95, 4.34
+
+shader_path = "shader/blur.glsl"
+
+#Radius of screen in percent, that is fully clear (foveal center)
+#Or transitional towards the periphery that is blurred
+    #Calculated from gaze center to full blur is:
+    #foveal_radius+transition_radius = distance in % of the screens pixel width (circular in height)
+foveal_radius = 0.0879
+transition_width = 0.14
+
+#Gaze source: "tobii" (hardware) or "mouse" (fallback)
+gaze_source = "tobii"
+
+#Blur kill-switch: set to False to run an unfiltered baseline condition
+#Eliminates performance differences for eyetrack vs non-eyetrack
+blur_active = True
+
+#Experiment metadata
+participant_id = 0
+session_id = 0
+
+#Gaze logging: write timestamped gaze positions to a CSV file (eyetracking loop only)
+log_gaze = False
+log_path = "gaze_log.csv"
+
+# Luminance correction for peripheral blur yellowing [0.0, 1.0].
+# 0.0 = no correction (full yellow cast),  1.0 = fully luminance-preserving.
+lum_correction = 0.0
+#Kept OFF for now, as it casts very visible yellowing visual artifacts without improving readability or usability
+#Thus keeping it OFF does not preserve luminance completely, but keeps colour channels from oversaturating beyond defensible levels

@@ -1,0 +1,10 @@
+opencv-python
+numpy
+pandas
+dxcam
+pathlib
+glfw
+PyOpenGL
+PyOpenGL_accelerate 
+typing
+tobii-research
