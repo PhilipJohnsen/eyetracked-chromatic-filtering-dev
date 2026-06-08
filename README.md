@@ -36,8 +36,8 @@ During the initial development phase, these are the benchmarks without eye track
 ### Installation
 1. Clone the repository
 ```bash
-git clone https://github.com/PhilipJohnsen/eyetracked-chromatic-filtering
-cd eyetracked-chromatic-filtering
+git clone https://github.com/PhilipJohnsen/eyetracked-chromatic-filtering-dev
+cd eyetracked-chromatic-filtering-dev
 ```
 
 2. Create a virtual environment using Python 3.10
